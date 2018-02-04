@@ -1,0 +1,12 @@
+/home/angus/Desktop/dotnetcore/app2
+--output-path=obj/Debug/netcoreapp2.0/
+--application-name=app2
+--content-root=/home/angus/Desktop/dotnetcore/app2
+--file=/home/angus/Desktop/dotnetcore/app2/Views/Home/About.cshtml
+--file=/home/angus/Desktop/dotnetcore/app2/Views/Home/Contact.cshtml
+--file=/home/angus/Desktop/dotnetcore/app2/Views/Home/Index.cshtml
+--file=/home/angus/Desktop/dotnetcore/app2/Views/Shared/Error.cshtml
+--file=/home/angus/Desktop/dotnetcore/app2/Views/Shared/_Layout.cshtml
+--file=/home/angus/Desktop/dotnetcore/app2/Views/Shared/_ValidationScriptsPartial.cshtml
+--file=/home/angus/Desktop/dotnetcore/app2/Views/_ViewImports.cshtml
+--file=/home/angus/Desktop/dotnetcore/app2/Views/_ViewStart.cshtml

@@ -20,6 +20,8 @@ namespace app2
         public static IWebHost BuildWebHost(string[] args) =>
             WebHost.CreateDefaultBuilder(args)
                 .UseStartup<Startup>()
+                //.UseContentRoot(Directory.GetCurrentDirectory())
+                //.UseUrls("http://localhost:5001")
                 .Build();
     }
 }
