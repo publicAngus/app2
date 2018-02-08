@@ -21,7 +21,7 @@ namespace app2
             WebHost.CreateDefaultBuilder(args)
                 .UseStartup<Startup>()
                 //.UseContentRoot(Directory.GetCurrentDirectory())
-                //.UseUrls("http://localhost:5001")
+                .UseUrls("http://localhost:7001")
                 .Build();
     }
 }

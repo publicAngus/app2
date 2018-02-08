@@ -1,0 +1,10 @@
+/home/angus/Desktop/dotnetcore/app2/bin/Release/netcoreapp2.0/app2.deps.json
+/home/angus/Desktop/dotnetcore/app2/bin/Release/netcoreapp2.0/app2.runtimeconfig.json
+/home/angus/Desktop/dotnetcore/app2/bin/Release/netcoreapp2.0/app2.runtimeconfig.dev.json
+/home/angus/Desktop/dotnetcore/app2/bin/Release/netcoreapp2.0/app2.dll
+/home/angus/Desktop/dotnetcore/app2/bin/Release/netcoreapp2.0/app2.pdb
+/home/angus/Desktop/dotnetcore/app2/obj/Release/netcoreapp2.0/app2.csproj.CoreCompileInputs.cache
+/home/angus/Desktop/dotnetcore/app2/obj/Release/netcoreapp2.0/app2.AssemblyInfoInputs.cache
+/home/angus/Desktop/dotnetcore/app2/obj/Release/netcoreapp2.0/app2.AssemblyInfo.cs
+/home/angus/Desktop/dotnetcore/app2/obj/Release/netcoreapp2.0/app2.dll
+/home/angus/Desktop/dotnetcore/app2/obj/Release/netcoreapp2.0/app2.pdb
