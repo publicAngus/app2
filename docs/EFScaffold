@@ -1,0 +1,2 @@
+//this bash command is run is the folder where the project file .csproj is.
+dotnet ef dbcontext scaffold 'Server=localhost;User Id=beetles;Password=abc123!;Database=jumpmanji;' "Pomelo.EntityFrameworkCore.MySql"

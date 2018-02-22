@@ -5,6 +5,7 @@
 --file=/home/angus/Desktop/dotnetcore/app2/Views/Home/About.cshtml
 --file=/home/angus/Desktop/dotnetcore/app2/Views/Home/Contact.cshtml
 --file=/home/angus/Desktop/dotnetcore/app2/Views/Home/Index.cshtml
+--file=/home/angus/Desktop/dotnetcore/app2/Views/Monitor/Screen1.cshtml
 --file=/home/angus/Desktop/dotnetcore/app2/Views/Shared/Error.cshtml
 --file=/home/angus/Desktop/dotnetcore/app2/Views/Shared/_Layout.cshtml
 --file=/home/angus/Desktop/dotnetcore/app2/Views/Shared/_ValidationScriptsPartial.cshtml

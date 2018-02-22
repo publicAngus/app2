@@ -1,0 +1,13 @@
+@using MySql.Data.MySqlClient
+@using System
+<script src="~/wwwroot/js/screen1.js"></script>
+<div>@DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss")</div>
+<div>
+     @using(var db = new jumpmanjiContext()){
+                    var users = db.Users.OrderByDescending(t=>t.Id).Take(5).ToList();
+                    foreach (var item in users)
+                    {
+                        <h1>@item.Name</h1>
+                    }
+               }
+</div>

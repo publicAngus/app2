@@ -14,14 +14,30 @@ namespace app2
     {
         public static void Main(string[] args)
         {
+            Console.WriteLine("Main started with below args:");
+            Console.WriteLine(string.Join(",",args));
             BuildWebHost(args).Run();
         }
 
-        public static IWebHost BuildWebHost(string[] args) =>
-            WebHost.CreateDefaultBuilder(args)
+        public static IWebHost BuildWebHost(string[] args){
+
+        var configs = new ConfigurationBuilder()
+        .AddCommandLine(args)
+        .Build();
+        
+
+         return  WebHost.CreateDefaultBuilder(args)
                 .UseStartup<Startup>()
                 //.UseContentRoot(Directory.GetCurrentDirectory())
-                .UseUrls("http://localhost:7001")
+                //.UseUrls("http://localhost:9001")
+                .UseConfiguration(configs)
+                //.ConfigureAppConfiguration((builderCtx,config)=>{
+                    //IHostingEnvironment env = builderCtx.HostingEnvironment;
+                    //config.AddJsonFile("appsettings.json",false,true)
+                    //.AddJsonFile($"appsettings.{env.EnvironmentName}.json",true,true);
+                //})  
                 .Build();
+        }
+        
     }
 }

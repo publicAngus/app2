@@ -7,6 +7,7 @@ namespace app2
     public partial class jumpmanjiContext : DbContext
     {
         public virtual DbSet<Users> Users { get; set; }
+        public virtual DbSet<UsersItems> UsersItems { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -35,6 +36,23 @@ namespace app2
                 entity.Property(e => e.Name)
                     .HasColumnName("name")
                     .HasMaxLength(100);
+            });
+
+            modelBuilder.Entity<UsersItems>(entity =>
+            {
+                entity.ToTable("usersItems");
+
+                entity.Property(e => e.Id)
+                    .HasColumnName("id")
+                    .HasColumnType("bigint(20)");
+
+                entity.Property(e => e.ItemName)
+                    .HasColumnName("itemName")
+                    .HasMaxLength(128);
+
+                entity.Property(e => e.Userid)
+                    .HasColumnName("userid")
+                    .HasColumnType("bigint(20)");
             });
         }
     }
