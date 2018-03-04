@@ -11,15 +11,5 @@
     
          @System.IO.Directory.GetCurrentDirectory()
     <br/>
-   
-
-    @using(var db = new jumpmanjiContext()){
-                    var users = db.Users.ToList();
-                    foreach (var item in users)
-                    {
-                        <h1>@item.Name</h1>
-                    }
-               }
-
          
 </h1>

@@ -35,6 +35,8 @@ namespace app2
                 //var appsettings = Configuration.Get<Models.App.Appsettings>();
                 return new Models.Providers.TestProvider("lalaal2018");
             });
+
+            
             
         }
 

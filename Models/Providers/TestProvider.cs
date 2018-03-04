@@ -1,4 +1,5 @@
 using System;
+using StackExchange.Redis;
 
 namespace app2.Models.Providers{
 
@@ -16,10 +17,25 @@ namespace app2.Models.Providers{
                 db.Users.Add(item);
                 db.SaveChanges();
             }
+
+            /*
+            RdsConn = ConnectionMultiplexer.Connect("127.0.0.1:6379");
+            IDatabase redisDb = RdsConn.GetDatabase();
+            //redisDb.SetAdd("boo","lion");
+            redisDb.StringSet("coo","coo-val");
+            */
+            
+
         }
         public string Name{
            get;set;
            }
+
+        public ConnectionMultiplexer RdsConn {get;set;}
+        
     }
+
+
+
 
 }

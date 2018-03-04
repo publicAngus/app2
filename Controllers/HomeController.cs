@@ -20,10 +20,14 @@ namespace app2.Controllers
             ViewData["Message"] = ipro.Name;
 
             using(var db = new jumpmanjiContext()){
-                var ret = db.Users.Where(t=>t.Id==1).GroupJoin(db.UsersItems,t=>t.Id,i=>i.Userid,(t,i)=>new{
+                
+                var ret = db.Users.OrderBy(t=>t.Id).Take(3).GroupJoin(db.UsersItems,t=>t.Id,i=>i.Userid,(t,i)=>new{
                         t.Id,
                         items = i
-                }).Take(2).ToList();
+                }).ToList();
+                
+
+                //var ret = db.Users.Take(10).ToList();
 
                  ViewData["Message"] = Newtonsoft.Json.JsonConvert.SerializeObject(ret);
             }
