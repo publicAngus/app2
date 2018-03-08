@@ -15,22 +15,12 @@ namespace app2.Controllers
             ipro = provider;
         }
 
+        [app2.Filters.TestFilter]
         public IActionResult Index()
         {
             ViewData["Message"] = ipro.Name;
 
-            using(var db = new jumpmanjiContext()){
-                
-                var ret = db.Users.OrderBy(t=>t.Id).Take(3).GroupJoin(db.UsersItems,t=>t.Id,i=>i.Userid,(t,i)=>new{
-                        t.Id,
-                        items = i
-                }).ToList();
-                
-
-                //var ret = db.Users.Take(10).ToList();
-
-                 ViewData["Message"] = Newtonsoft.Json.JsonConvert.SerializeObject(ret);
-            }
+            ViewData["Message"] = ipro.GetTestData();
 
             return View();
         }

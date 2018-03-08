@@ -1,11 +1,13 @@
 using System;
 using StackExchange.Redis;
+using System.Linq;
 
 namespace app2.Models.Providers{
 
     public interface IProvider
     {
         string Name{get;set;}
+        string GetTestData();
     }
 
     public class TestProvider:IProvider{
@@ -24,9 +26,21 @@ namespace app2.Models.Providers{
             //redisDb.SetAdd("boo","lion");
             redisDb.StringSet("coo","coo-val");
             */
-            
-
+        
         }
+
+        public string GetTestData(){
+             using(var db = new jumpmanjiContext()){
+                
+                var ret = db.Users.OrderBy(t=>t.Id).Take(3).GroupJoin(db.UsersItems,t=>t.Id,i=>i.Userid,(t,i)=>new{
+                        t.Id,
+                        items = i
+                }).ToList();
+                return Newtonsoft.Json.JsonConvert.SerializeObject(ret);
+            }
+        }
+
+
         public string Name{
            get;set;
            }
