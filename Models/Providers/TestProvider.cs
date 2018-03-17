@@ -12,13 +12,18 @@ namespace app2.Models.Providers{
 
     public class TestProvider:IProvider{
         public TestProvider(string name){
+
+
             this.Name = name;
+            
             using(var db = new jumpmanjiContext()){
                 
                 var item = new Users(){ Name=  DateTime.UtcNow.ToString("yyyy-MM-dd hh:mm:ss") };
                 db.Users.Add(item);
                 db.SaveChanges();
             }
+
+            
 
             /*
             RdsConn = ConnectionMultiplexer.Connect("127.0.0.1:6379");
@@ -30,6 +35,8 @@ namespace app2.Models.Providers{
         }
 
         public string GetTestData(){
+            //return "--";
+            
              using(var db = new jumpmanjiContext()){
                 
                 var ret = db.Users.OrderBy(t=>t.Id).Take(3).GroupJoin(db.UsersItems,t=>t.Id,i=>i.Userid,(t,i)=>new{
@@ -38,6 +45,7 @@ namespace app2.Models.Providers{
                 }).ToList();
                 return Newtonsoft.Json.JsonConvert.SerializeObject(ret);
             }
+            
         }
 
 
