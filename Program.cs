@@ -20,7 +20,7 @@ namespace app2
         }
 
         public static IWebHost BuildWebHost(string[] args){
-
+        
         var configs = new ConfigurationBuilder()
         .AddCommandLine(args)
         .Build();
@@ -28,9 +28,9 @@ namespace app2
 
          return  WebHost.CreateDefaultBuilder(args)
                 .UseStartup<Startup>()
-                //.UseContentRoot(Directory.GetCurrentDirectory())
-                //.UseUrls("http://localhost:9001")
-                //.UseConfiguration(configs)
+                .UseContentRoot(Directory.GetCurrentDirectory())
+                //.UseUrls("http://*:5000")
+                .UseConfiguration(configs)
                 //.ConfigureAppConfiguration((builderCtx,config)=>{
                     //IHostingEnvironment env = builderCtx.HostingEnvironment;
                     //config.AddJsonFile("appsettings.json",false,true)
