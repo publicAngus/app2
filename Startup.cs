@@ -31,12 +31,16 @@ namespace app2
                 return new Models.Providers.TestProvider("hello angus");
             });
             */
+
+            services.Configure<app2.Models.App.Appsettings>(Configuration.GetSection("Appsettings"));
+            
+
             services.AddSingleton<Models.Providers.IProvider,Models.Providers.TestProvider>(ServiceProvider=>{
                 //var appsettings = Configuration.Get<Models.App.Appsettings>();
                 return new Models.Providers.TestProvider("lalaal2018");
             });
 
-            
+            services.AddSingleton<Models.Providers.IProvider,Models.Providers.DiTestProvider>();
             
         }
 

@@ -1,0 +1,10 @@
+#docker run -p 6777:5000 -v `pwd`:/app --link localdb:localdb -d app2:7.0 dotnet app2.dll --urls=http://*:5000
+#docker run --name app2real -p 9190:9000 -d app2:6.1 dotnet app2.dll --urls=http://*:9000
+#for docker file as below
+#docker file
+FROM microsoft/dotnet
+WORKDIR /app
+COPY $pwd/bin/Debug/netcoreapp2.0/publish /app
+#EXPOSE 5000
+#ENTRYPOINT [ "dotnet","app2.dll","--urls=http://*:5000" ]
+# end docker file

@@ -1,6 +1,7 @@
 using System;
 using StackExchange.Redis;
 using System.Linq;
+using Microsoft.Extensions.Configuration;
 
 namespace app2.Models.Providers{
 
@@ -12,7 +13,6 @@ namespace app2.Models.Providers{
 
     public class TestProvider:IProvider{
         public TestProvider(string name){
-
 
             this.Name = name;
 /*            
@@ -35,7 +35,8 @@ namespace app2.Models.Providers{
         }
 
         public string GetTestData(){
-            return "-GetTestData-";
+            return  "ffff";//$"{Configuration["ConfigVersion"]}";
+            
             /*
              using(var db = new jumpmanjiContext()){
                 

@@ -5,7 +5,9 @@ namespace app2.Models.App{
         public string TestMsg{get;set;}
     }
 
-    public class Appsettings{
-        public Logging Logging{get;set;}
+   public class Appsettings
+    {
+        public string DBCon { get; set; }
+        public string SiteName{get;set;}
     }
 }
