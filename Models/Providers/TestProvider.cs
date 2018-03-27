@@ -25,12 +25,14 @@ namespace app2.Models.Providers{
 */
             
 
-            /*
+            
             RdsConn = ConnectionMultiplexer.Connect("127.0.0.1:6379");
             IDatabase redisDb = RdsConn.GetDatabase();
             //redisDb.SetAdd("boo","lion");
             redisDb.StringSet("coo","coo-val");
-            */
+
+            string vx = redisDb.StringGet("coo");
+            
         
         }
 

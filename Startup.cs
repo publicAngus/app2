@@ -40,7 +40,7 @@ namespace app2
                 return new Models.Providers.TestProvider("lalaal2018");
             });
 
-            services.AddSingleton<Models.Providers.IProvider,Models.Providers.DiTestProvider>();
+            //services.AddSingleton<Models.Providers.IProvider,Models.Providers.DiTestProvider>();
             
         }
 
