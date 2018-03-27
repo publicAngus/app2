@@ -37,10 +37,10 @@ namespace app2.Models.Providers{
         }
 
         public string GetTestData(){
-            return  "ffff";//$"{Configuration["ConfigVersion"]}";
+            //return  "ffff";//$"{Configuration["ConfigVersion"]}";
             
-            /*
-             using(var db = new jumpmanjiContext()){
+            
+             using(var db = new app2.DB.Models.jumpmanjiContext()){
                 
                 var ret = db.Users.OrderBy(t=>t.Id).Take(3).GroupJoin(db.UsersItems,t=>t.Id,i=>i.Userid,(t,i)=>new{
                         t.Id,
@@ -48,7 +48,7 @@ namespace app2.Models.Providers{
                 }).ToList();
                 return Newtonsoft.Json.JsonConvert.SerializeObject(ret);
             }
-            */
+            
         }
 
 

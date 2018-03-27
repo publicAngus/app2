@@ -2,7 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
 
-namespace app2
+namespace app2.DB.Models
 {
     public partial class jumpmanjiContext : DbContext
     {
@@ -24,17 +24,12 @@ namespace app2
             {
                 entity.ToTable("users");
 
-                entity.Property(e => e.Id)
-                    .HasColumnName("id")
-                    .HasColumnType("bigint(20)");
+                entity.Property(e => e.Id).HasColumnType("bigint(20)");
 
-                entity.Property(e => e.Intval)
-                    .HasColumnName("intval")
-                    .HasColumnType("int(11)")
-                    .HasDefaultValueSql("'0'");
+                entity.Property(e => e.IntVal).HasColumnType("int(11)");
 
                 entity.Property(e => e.Name)
-                    .HasColumnName("name")
+                    .IsRequired()
                     .HasMaxLength(100);
             });
 
@@ -42,17 +37,11 @@ namespace app2
             {
                 entity.ToTable("usersItems");
 
-                entity.Property(e => e.Id)
-                    .HasColumnName("id")
-                    .HasColumnType("bigint(20)");
+                entity.Property(e => e.Id).HasColumnType("bigint(20)");
 
-                entity.Property(e => e.ItemName)
-                    .HasColumnName("itemName")
-                    .HasMaxLength(128);
+                entity.Property(e => e.ItemName).HasMaxLength(100);
 
-                entity.Property(e => e.Userid)
-                    .HasColumnName("userid")
-                    .HasColumnType("bigint(20)");
+                entity.Property(e => e.Userid).HasColumnType("bigint(20)");
             });
         }
     }
