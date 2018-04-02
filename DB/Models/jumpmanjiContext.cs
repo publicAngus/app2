@@ -14,7 +14,7 @@ namespace app2.DB.Models
             if (!optionsBuilder.IsConfigured)
             {
 //#warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
-                optionsBuilder.UseMySql("Server=localhost;User Id=beetles;Password=abc123!;Database=jumpmanji;");
+                optionsBuilder.UseMySql("Server=localhost;User Id=hidenbeetles;Password=abc123!;Database=jumpmanji;");
             }
         }
 

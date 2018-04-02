@@ -8,6 +8,10 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.AspNetCore.HttpOverrides;
 using Microsoft.AspNetCore.Http;
+using app2.DB.Models;
+
+using Microsoft.EntityFrameworkCore;
+//using Microsoft.EntityFrameworkCore.Metadata;
 
 namespace app2
 {
@@ -32,15 +36,22 @@ namespace app2
             });
             */
 
-            services.Configure<app2.Models.App.Appsettings>(Configuration.GetSection("Appsettings"));
+    
+            var appsettings = Configuration.GetSection("Appsettings");
+            services.Configure<app2.Models.App.Appsettings>(appsettings);
             
-
-            services.AddSingleton<Models.Providers.IProvider,Models.Providers.TestProvider>(ServiceProvider=>{
-                //var appsettings = Configuration.Get<Models.App.Appsettings>();
-                return new Models.Providers.TestProvider("lalaal2018");
+            services.AddDbContext<app2.DB.Models.jumpmanjiContext>((opt)=>{
+                //opt.UseMySql("Server=localhost;User Id=beetles;Password=abc123!;Database=jumpmanji;");
+                opt.UseMySql(appsettings.GetValue<string>("DBCon"));
             });
 
-            //services.AddSingleton<Models.Providers.IProvider,Models.Providers.DiTestProvider>();
+            //services.AddSingleton<Models.Providers.IProvider,Models.Providers.TestProvider>(ServiceProvider=>{
+                //var appsettings = Configuration.Get<Models.App.Appsettings>();
+                //return new Models.Providers.TestProvider("lalaal2018");
+            //});
+            //services.AddSingleton<Models.Providers.IProvider,Models.Providers.TestProvider>();
+            services.AddScoped<Models.Providers.IProvider,Models.Providers.TestProvider>();
+             //services.AddSingleton<Models.Providers.IProvider,Models.Providers.DiTestProvider>();
             
         }
 

@@ -1,0 +1,19 @@
+using System;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.Extensions.Options;
+
+namespace app2.DB.Modelsxxxx
+{
+    public class TestDbContextxxx:jumpmanjiContext{
+        DbContextOptions options;
+        public TestDbContext(IOptions<DbContextOptions> options){
+            this.options= options.Value;
+        }
+        
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder){
+            optionsBuilder = this.options;
+        }
+
+    }
+}
